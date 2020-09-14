@@ -5,6 +5,7 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { isShowConsole } from './utils/auth';
 
+// 打开vconsole
 isShowConsole();
 
 function render(props: any) {
