@@ -10,7 +10,7 @@ const App = (props: any) => {
 
   useEffect(() => {
 
-  });
+  }, []);
 
   return (
     <Router basename="/dqhj-zybz/gzdt-mobile/">

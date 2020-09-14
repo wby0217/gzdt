@@ -1,5 +1,4 @@
 import { isLocalhost } from './core';
-console.log('isLocalhost', isLocalhost);
 declare const window: any;
 export const isCloudtplus = !isLocalhost && window.cloudtplus && window.cloudtplus.onDeviceReady;
 export function onDeviceReady(cb: { (): void }) {

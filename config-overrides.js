@@ -4,10 +4,10 @@ const path = require('path');
 const setWebpackOutput = () => (config) => {
   config.output = {
     ...config.output,
-    library: 'datahub-admin-console',
+    library: 'gzdt-mobile',
     libraryTarget: 'umd',
-    publicPath: process.env.REACT_APP_USER_WEB_URL,
-    jsonpFunction: 'webpackJsonp_datahub-admin-console',
+    // publicPath: process.env.REACT_APP_USER_WEB_URL,
+    jsonpFunction: 'webpackJsonp_gzdt-mobile',
   };
   return config;
 };
@@ -26,15 +26,15 @@ const setWebpackOutput = () => (config) => {
 module.exports = {
   webpack: override(
     fixBabelImports('import', {
-      libraryName: 'antd',
+      // libraryName: 'antd',
       libraryDirectory: 'es',
       style: true,
     }),
     addLessLoader({
       javascriptEnabled: true,
-      modifyVars: {
-        '@hack': `true; @import "assets/styles/myCustomizedAntdTheme.less";`,
-      },
+      // modifyVars: {
+      //   '@hack': `true; @import "assets/styles/myCustomizedAntdTheme.less";`,
+      // },
       paths: [path.resolve(__dirname, 'src')],
     }),
     setWebpackOutput() // 这才是正解，如果报错，只能说是 publicPath 有问题，因为如果你设置了 %publicUrl%，你需要加上publicUrl

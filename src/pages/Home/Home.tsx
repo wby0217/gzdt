@@ -45,12 +45,15 @@ const Home: { (props: Props): JSX.Element } = (props) => {
   };
 
   console.log(globalUser);
+  const setContent = (count) => {
+    return count === 0 ? <GeneralSituation /> : count === 1 ? <ConstructionSite /> : <VideoMonitor />;
+  };
 
   return (
     <div className="Home">
 
       {
-        count === 0 ? <GeneralSituation /> : count === 1 ? <ConstructionSite /> : <VideoMonitor />
+        setContent(count)
       }
 
       <div className="btn-wrap">
