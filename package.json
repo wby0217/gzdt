@@ -93,6 +93,11 @@
     "react-app-rewired": "^2.1.6",
     "vconsole": "^3.3.4"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint"
   }
