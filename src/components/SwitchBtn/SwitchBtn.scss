@@ -1,0 +1,24 @@
+.SwitchBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .SwitchBtn-btn-wrap {
+        display: flex;
+        background-color: #eee;
+        border-radius: 4px;
+        border: 1px solid #999;
+        .btn {
+            width: 50px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            border-left: 1px solid #999;
+        }
+        .btn:first-child {
+            border: none;
+        }
+        .changeBtn {
+            background-color: blue;
+        }
+    }
+}

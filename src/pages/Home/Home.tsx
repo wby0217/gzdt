@@ -8,6 +8,7 @@ import { useGlobalUserStore, GlobalUserInfo, UserRole } from '../../store/useGlo
 import { resourceBase } from '../../utils/core';
 import MainTab from '../../components/MainTab/MainTab';
 import SituationBox from '../../components/SituationBox/SituationBox';
+import SwitchBtn from '../../components/SwitchBtn/SwitchBtn';
 import echarts from 'echarts/lib/echarts';
 //导入折线图
 import 'echarts/lib/chart/line';
@@ -77,7 +78,7 @@ const Home: { (props: Props): JSX.Element } = (props) => {
           {
             name: '订单量',
             type: 'bar',
-            data: [1000, 2000, 1500, 3000, 2000, 1200, 900]
+            data: [100, 200, 150, 300, 200, 120, 500]
           }
         ]
     };
@@ -141,7 +142,28 @@ const Home: { (props: Props): JSX.Element } = (props) => {
           title="人员情况"
           imgName="logo"
         >
-          <ReactEcharts option={getOption()} style={{ height: '400px' }} />
+          <>
+            <ReactEcharts option={getOption()} style={{ height: '400px' }} />
+            <SwitchBtn
+              onClick={(id) => {
+                console.log(id);
+              }}
+              btnData={[
+                {
+                  id: 1,
+                  name: '实施'
+                },
+                {
+                  id: 2,
+                  name: '出勤'
+                },
+                {
+                  id: 3,
+                  name: '在岗'
+                },
+              ]}
+            />
+          </>
         </SituationBox>
       </div>
 
