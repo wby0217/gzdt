@@ -1,11 +1,12 @@
 import React, { Component, useState, useEffect, useReducer, useContext } from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect, Switch, useLocation } from 'react-router-dom';
 import { useGlobalUserStore, GlobalUserInfo, UserRole } from './store/useGlobalUserStore';
-
 import './App.scss';
 import RouterList from './route/route';
 
-const App = (props: any) => {
+interface Props {}
+
+const App = (props: Props) => {
   const { globalUser, updateGlobalUser } = useGlobalUserStore();
 
   useEffect(() => {
