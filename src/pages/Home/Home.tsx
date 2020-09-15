@@ -7,6 +7,14 @@ import VideoMonitor from '../VideoMonitor/VideoMonitor';
 import { useGlobalUserStore, GlobalUserInfo, UserRole } from '../../store/useGlobalUserStore';
 import { resourceBase } from '../../utils/core';
 import MainTab from '../../components/MainTab/MainTab';
+import echarts from 'echarts/lib/echarts';
+//导入折线图
+import 'echarts/lib/chart/line';
+import 'echarts/lib/component/tooltip';
+import 'echarts/lib/component/title';
+import 'echarts/lib/component/legend';
+import 'echarts/lib/component/markPoint';
+import ReactEcharts from 'echarts-for-react';
 
 interface Props {}
 
@@ -50,6 +58,31 @@ const Home: { (props: Props): JSX.Element } = (props) => {
     return count === 0 ? <GeneralSituation /> : count === 1 ? <ConstructionSite /> : <VideoMonitor />;
   };
 
+  const getOption = () => {
+    let option = {
+        title: {
+          text: '用户骑行订单'
+        },
+        tooltip: {
+          trigger: 'axis'
+        },
+        xAxis: {
+          data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [
+          {
+            name: '订单量',
+            type: 'bar',
+            data: [1000, 2000, 1500, 3000, 2000, 1200, 8000]
+          }
+        ]
+    };
+    return option;
+  };
+
   return (
     <div className="Home">
       {/* {
@@ -57,7 +90,7 @@ const Home: { (props: Props): JSX.Element } = (props) => {
       } */}
 
       <div className="main-content">
-        首页
+        <ReactEcharts option={getOption()} theme="Imooc" style={{ height: '400px' }} />
       </div>
 
       <MainTab index={0} />
