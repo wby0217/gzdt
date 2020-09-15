@@ -14,7 +14,7 @@ const setWebpackOutput = () => (config) => {
 module.exports = {
   webpack: override(
     fixBabelImports('import', {
-      libraryName: 'antd-mobile',
+      libraryName: 'antd',
       libraryDirectory: 'es',
       style: true,
     }),

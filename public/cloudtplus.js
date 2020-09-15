@@ -1,3 +1,4 @@
+/* eslint-disable */
 (function() {
 	if (window.cloudtplus) {
 		return;
@@ -3073,3 +3074,4 @@
 		}
 	})(window.cloudtplus);
 })();
+/* eslint-enable */

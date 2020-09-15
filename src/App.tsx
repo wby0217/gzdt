@@ -13,7 +13,7 @@ const App = (props: any) => {
   }, []);
 
   return (
-    <Router basename="/dqhj-zybz/gzdt-mobile/">
+    <Router basename="/gzdt-mobile/">
       <RouterList />
     </Router>
   );
