@@ -7,6 +7,7 @@ import VideoMonitor from '../VideoMonitor/VideoMonitor';
 import { useGlobalUserStore, GlobalUserInfo, UserRole } from '../../store/useGlobalUserStore';
 import { resourceBase } from '../../utils/core';
 import MainTab from '../../components/MainTab/MainTab';
+import SituationBox from '../../components/SituationBox/SituationBox';
 import echarts from 'echarts/lib/echarts';
 //导入折线图
 import 'echarts/lib/chart/line';
@@ -76,7 +77,7 @@ const Home: { (props: Props): JSX.Element } = (props) => {
           {
             name: '订单量',
             type: 'bar',
-            data: [1000, 2000, 1500, 3000, 2000, 1200, 8000]
+            data: [1000, 2000, 1500, 3000, 2000, 1200, 900]
           }
         ]
     };
@@ -90,7 +91,58 @@ const Home: { (props: Props): JSX.Element } = (props) => {
       } */}
 
       <div className="main-content">
-        <ReactEcharts option={getOption()} theme="Imooc" style={{ height: '400px' }} />
+        {/* <ReactEcharts option={getOption()} style={{ height: '400px' }} /> */}
+        <div className="num-box-wrap">
+          <div className="num-box blue">
+            <p className="box-title">施工工点</p>
+            <div className="box-center">
+              <p>8</p>
+              <p>（本年）</p>
+            </div>
+            <p className="box-tip">正在施工</p>
+          </div>
+          <div className="num-box blue">
+            <p className="box-title">施工工点</p>
+            <div className="box-center">8</div>
+            <p className="box-tip">正在施工</p>
+          </div>
+          <div className="num-box blue">
+            <p className="box-title">施工工点</p>
+            <div className="box-center">8</div>
+            <p className="box-tip">正在施工</p>
+          </div>
+          <div className="num-box blue">
+            <p className="box-title">施工工点</p>
+            <div className="box-center">8</div>
+            <p className="box-tip">正在施工</p>
+          </div>
+        </div>
+
+        <div className="num-box-wrap">
+          <div className="num-box blue span-01">
+            <p>现场/在岗人数</p>
+            <p>2928/3789</p>
+          </div>
+          <div className="num-box blue span-02">
+            <p>在岗人数</p>
+            <p>2928</p>
+          </div>
+          <div className="num-box blue span-02">
+            <p>在岗人数</p>
+            <p>2928</p>
+          </div>
+          <div className="num-box blue span-03">
+            <p>在岗人数</p>
+            <p>2928</p>
+          </div>
+        </div>
+
+        <SituationBox
+          title="人员情况"
+          imgName="logo"
+        >
+          <ReactEcharts option={getOption()} style={{ height: '400px' }} />
+        </SituationBox>
       </div>
 
       <MainTab index={0} />
