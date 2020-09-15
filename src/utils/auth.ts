@@ -1,5 +1,4 @@
 import VConsole from 'vconsole';
-import { EnumDomainRoles } from "./types";
 import { apiServices } from "../services";
 import { isDev } from './core';
 

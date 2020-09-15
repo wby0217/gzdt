@@ -6,6 +6,7 @@ import ConstructionSite from '../ConstructionSite/ConstructionSite';
 import VideoMonitor from '../VideoMonitor/VideoMonitor';
 import { useGlobalUserStore, GlobalUserInfo, UserRole } from '../../store/useGlobalUserStore';
 import { resourceBase } from '../../utils/core';
+import MainTab from '../../components/MainTab/MainTab';
 
 interface Props {}
 
@@ -51,12 +52,16 @@ const Home: { (props: Props): JSX.Element } = (props) => {
 
   return (
     <div className="Home">
-
-      {
+      {/* {
         setContent(count)
-      }
+      } */}
 
-      <div className="btn-wrap">
+      <div className="main-content">
+        首页
+      </div>
+
+      <MainTab index={0} />
+      {/* <div className="btn-wrap">
         <div
           className={`button ${count === 0 ? 'changeBtn' : ''}`}
           onClick={() => switchPanel(0)}
@@ -78,7 +83,7 @@ const Home: { (props: Props): JSX.Element } = (props) => {
           <img src={`${resourceBase}/images/logo.png`} />
           <span>视频监控</span>
         </div>
-      </div>
+      </div> */}
 
     </div>
   );

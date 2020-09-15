@@ -6,27 +6,15 @@ const setWebpackOutput = () => (config) => {
     ...config.output,
     library: 'gzdt-mobile',
     libraryTarget: 'umd',
-    // publicPath: process.env.REACT_APP_USER_WEB_URL,
     jsonpFunction: 'webpackJsonp_gzdt-mobile',
   };
   return config;
 };
 
-// 以下这种写法是不对的！！！
-// webpackConfig.output = {
-//   ...webpackConfig.output,
-//   library: 'datahub-admin-console',
-//   libraryTarget: 'umd',
-//   publicPath: `//localhost:3009/`,
-//   jsonpFunction: 'webpackJsonp_datahub-admin-console',
-// };
-
-// console.log(webpackConfig);
-
 module.exports = {
   webpack: override(
     fixBabelImports('import', {
-      // libraryName: 'antd',
+      libraryName: 'antd-mobile',
       libraryDirectory: 'es',
       style: true,
     }),
