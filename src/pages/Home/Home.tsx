@@ -98,43 +98,46 @@ const Home: { (props: Props): JSX.Element } = (props) => {
             <p className="box-title">施工工点</p>
             <div className="box-center">
               <p>8</p>
-              <p>（本年）</p>
+              <p className="center-bottom">（本年）</p>
             </div>
             <p className="box-tip">正在施工</p>
           </div>
-          <div className="num-box blue">
+          <div className="num-box green">
             <p className="box-title">施工工点</p>
             <div className="box-center">8</div>
             <p className="box-tip">正在施工</p>
           </div>
-          <div className="num-box blue">
+          <div className="num-box red">
             <p className="box-title">施工工点</p>
             <div className="box-center">8</div>
             <p className="box-tip">正在施工</p>
           </div>
-          <div className="num-box blue">
+          <div className="num-box purple">
             <p className="box-title">施工工点</p>
-            <div className="box-center">8</div>
+            <div className="box-center">
+              <p>8</p>
+              <p className="center-bottom">（红色+橙色）</p>
+            </div>
             <p className="box-tip">正在施工</p>
           </div>
         </div>
 
         <div className="num-box-wrap">
           <div className="num-box blue span-01">
-            <p>现场/在岗人数</p>
-            <p>2928/3789</p>
+            <p className="text">现场/在岗人数</p>
+            <p className="num">2928/3789</p>
           </div>
           <div className="num-box blue span-02">
-            <p>在岗人数</p>
-            <p>2928</p>
+            <p className="text">在岗人数</p>
+            <p className="num">2928</p>
           </div>
           <div className="num-box blue span-02">
-            <p>在岗人数</p>
-            <p>2928</p>
+            <p className="text">在岗人数</p>
+            <p className="num">2928</p>
           </div>
           <div className="num-box blue span-03">
-            <p>在岗人数</p>
-            <p>2928</p>
+            <p className="text">在岗人数</p>
+            <p className="num">2928</p>
           </div>
         </div>
 

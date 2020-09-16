@@ -3,12 +3,13 @@
     box-shadow:  0px 0px 7px #999;
     border-radius: 4px;
     padding: 10px;
+    background-color: #fff;
     .title-box {
         height: 40px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        color: #999;
+        color: #ACACAC;
         .right {
             display: flex;
             align-items: center;
@@ -20,8 +21,8 @@
             }
             p {
                 color: #333;
-                margin-left: 10px;
-                font-size: 16px;
+                margin-left: 5px;
+                font-size: 14px;
             }
         }
     }
