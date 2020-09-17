@@ -1,29 +1,10 @@
 .SituationBox {
     margin: 10px;
-    box-shadow:  0px 0px 7px #999;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    padding: 10px;
+    // padding: 10px;
     background-color: #fff;
-    .title-box {
-        height: 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: #ACACAC;
-        .right {
-            display: flex;
-            align-items: center;
-            img{
-                width: 30px;
-                height: 30px;
-                display: block;
-                border-radius: 19px;
-            }
-            p {
-                color: #333;
-                margin-left: 5px;
-                font-size: 14px;
-            }
-        }
+    .TitleBar-wrap {
+        padding: 10px 10px 0 10px;
     }
 }

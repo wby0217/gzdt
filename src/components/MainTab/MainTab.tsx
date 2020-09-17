@@ -11,14 +11,17 @@ const MainTab: { (props: Props): JSX.Element } = (props) => {
     const btnData = [
         {
             name: '概况',
+            imgName: 'situation',
             router: '/'
         },
         {
             name: '数字工地',
+            imgName: 'constructionSite',
             router: '/constructionSite'
         },
         {
             name: '视频监控',
+            imgName: 'videoMonitor',
             router: '/videoMonitor'
         }
     ];
@@ -32,7 +35,7 @@ const MainTab: { (props: Props): JSX.Element } = (props) => {
                         key={i}
                         to={item.router}
                     >
-                        <img src={`${resourceBase}/images/logo.png`} />
+                        <img src={`${resourceBase}/images/${item.imgName}${props.index === i ? '-select' : ''}.png`} />
                         <span>{item.name}</span>
                     </Link>
                 ))

@@ -1,0 +1,22 @@
+.TitleBar {
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ACACAC;
+    .right {
+        display: flex;
+        align-items: center;
+        img{
+            width: 30px;
+            height: 30px;
+            display: block;
+            border-radius: 19px;
+        }
+        p {
+            color: #333;
+            margin-left: 5px;
+            font-size: 14px;
+        }
+    }
+}

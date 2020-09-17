@@ -19,6 +19,7 @@ const SwitchBtn: { (props: Props): JSX.Element } = (props) => {
                 {
                     btnData.map((item) => (
                         <div
+                            key={item.id}
                             className={`btn ${id === item.id ? 'changeBtn' : ''}`}
                             onClick={() => {
                                 setIndex(item.id);

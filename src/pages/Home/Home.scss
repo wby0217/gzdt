@@ -99,4 +99,46 @@
       justify-content: center;
     }
   }
+
+  .pie-box {
+    flex: 1;
+    border-top: 1px solid #EAEAEA;
+    padding: 6px 0 20px 8px;
+  }
+  .pie-box:last-child{
+    border-left: 1px solid #EAEAEA;
+  }
+  .num-bar {
+    display: flex;
+    line-height: 54px;
+    div {
+      flex: 1;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        margin: 0 6px;
+      }
+      .text-span {
+        color: #333;
+        font-size: 14px;
+      }
+      .num-span {
+        color: #0068F9;
+        font-size: 21px;
+      }
+    }
+  }
+  .personnel-pie-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    .personnel-pie {
+      // flex: 1;
+      padding: 0 20px;
+    }
+  }
 }

@@ -9,6 +9,7 @@ import { resourceBase } from '../../utils/core';
 import MainTab from '../../components/MainTab/MainTab';
 import SituationBox from '../../components/SituationBox/SituationBox';
 import SwitchBtn from '../../components/SwitchBtn/SwitchBtn';
+import PieChart from '../../components/PieChart/PieChart';
 import echarts from 'echarts/lib/echarts';
 //导入折线图
 import 'echarts/lib/chart/line';
@@ -17,10 +18,12 @@ import 'echarts/lib/component/title';
 import 'echarts/lib/component/legend';
 import 'echarts/lib/component/markPoint';
 import ReactEcharts from 'echarts-for-react';
+import TitleBar from "../../components/TitleBar/TitleBar";
 
 interface Props {}
 
 const Home: { (props: Props): JSX.Element } = (props) => {
+  const clientWidth = document.documentElement.clientWidth;
   const { globalUser, updateGlobalUser } = useGlobalUserStore();
   const [count, setCount] = useState(0);
 
@@ -141,12 +144,122 @@ const Home: { (props: Props): JSX.Element } = (props) => {
           </div>
         </div>
 
+        {/*
+          * 人员人员情况
+        */}
         <SituationBox
           title="人员情况"
           imgName="logo"
         >
           <>
-            <ReactEcharts option={getOption()} style={{ height: '400px' }} />
+            <div className="num-bar">
+              <div>
+                <span className="text-span">总数</span>
+                <span className="num-span">56</span>
+              </div>
+              <div>
+                <span className="text-span">已开工</span>
+                <span className="num-span">16</span>
+              </div>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+              }}
+            >
+              <div className="pie-box">
+                <TitleBar
+                  title="站点"
+                  imgWidth={25}
+                  imgName="logo"
+                />
+                <PieChart
+                  itemData={
+                    [
+                      { value: 548 },
+                      { value: 535 },
+                      { value: 510 },
+                      { value: 634 },
+                    ]
+                  }
+                  colorList={
+                    ['#1777FD', '#F9A825', '#E91E63', '#00BCD4']
+                  }
+                />
+              </div>
+              <div className="pie-box">
+                <TitleBar
+                  title="区间"
+                  imgWidth={25}
+                  imgName="logo"
+                />
+                <PieChart
+                  itemData={
+                    [
+                      { value: 548 },
+                      { value: 535 },
+                      { value: 510 },
+                      { value: 634 },
+                    ]
+                  }
+                  colorList={
+                    ['#1777FD', '#F9A825', '#E91E63', '#00BCD4']
+                  }
+                />
+              </div>
+            </div>
+          </>
+        </SituationBox>
+
+        <SituationBox
+          title="进度情况"
+          imgName="logo"
+        >
+          <>
+            <div
+              className="personnel-pie-wrap"
+              style={{
+                display: 'flex',
+
+              }}
+            >
+              <div
+                className="personnel-pie"
+              >
+                <PieChart
+                  itemData={
+                    [
+                      { value: 698 },
+                      { value: 1000 }
+                    ]
+                  }
+                  colorList={
+                    ['#F9A825', '#D8D8D8']
+                  }
+                  pieWidth={clientWidth / 3.2}
+                  radius={['80%', '100%']}
+                  showNameList={false}
+                />
+              </div>
+              <div
+                className="personnel-pie"
+              >
+                <PieChart
+                  itemData={
+                    [
+                      { value: 548 },
+                      { value: 1000 }
+                    ]
+                  }
+                  colorList={
+                    ['#1777FD', '#D8D8D8']
+                  }
+                  radius={['80%', '100%']}
+                  pieWidth={clientWidth / 3.2}
+                  showNameList={false}
+                />
+              </div>
+            </div>
             <SwitchBtn
               onClick={(id) => {
                 console.log(id);
@@ -171,29 +284,6 @@ const Home: { (props: Props): JSX.Element } = (props) => {
       </div>
 
       <MainTab index={0} />
-      {/* <div className="btn-wrap">
-        <div
-          className={`button ${count === 0 ? 'changeBtn' : ''}`}
-          onClick={() => switchPanel(0)}
-        >
-          <img src={`${resourceBase}/images/logo.png`} />
-          <span>概况</span>
-        </div>
-        <div
-          className={`button ${count === 1 ? 'changeBtn' : ''}`}
-          onClick={() => switchPanel(1)}
-        >
-          <img src={`${resourceBase}/images/logo.png`} />
-          <span>数字工地</span>
-        </div>
-        <div
-          className={`button ${count === 2 ? 'changeBtn' : ''}`}
-          onClick={() => switchPanel(2)}
-        >
-          <img src={`${resourceBase}/images/logo.png`} />
-          <span>视频监控</span>
-        </div>
-      </div> */}
 
     </div>
   );

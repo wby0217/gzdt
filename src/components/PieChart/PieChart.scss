@@ -1,0 +1,29 @@
+.PieChart {
+    display: flex;
+    align-items: center;
+    .pie-list-wrap {
+        margin-left: 12px;
+        .list-item {
+            display: flex;
+            height: 30px;
+            align-items: center;
+            color: #333;
+            i {
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                border-radius: 8px;
+                background-color: red;
+            }
+            .list-item-name {
+                min-width: 54px;
+                font-size: 12px;
+                margin-left: 8px;
+                // margin-right: 12px;
+            }
+            .list-item-num {
+                color: #0068F9;
+            }
+        }
+    }
+}
