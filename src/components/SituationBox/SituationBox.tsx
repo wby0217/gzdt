@@ -8,15 +8,15 @@ interface Props {
     children?: JSX.Element;
     title: string;
     imgName: string;
-    style?: any;
+    styles?: any;
 }
 
 const SituationBox: { (props: Props): JSX.Element } = (props) => {
-    const { children, imgName, title, style } = props;
+    const { children, imgName, title, styles } = props;
     return (
         <div
             className="SituationBox"
-            style={{ ...style }}
+            style={{ ...styles }}
         >
             <div className="TitleBar-wrap">
                 <TitleBar

@@ -217,7 +217,7 @@ const Home: { (props: Props): JSX.Element } = (props) => {
         <SituationBox
           title="进度情况"
           imgName="logo"
-          style={{
+          styles={{
             paddingBottom: 16
           }}
         >
@@ -300,11 +300,6 @@ const Home: { (props: Props): JSX.Element } = (props) => {
                   id: 2,
                   name: '累计',
                   width: 78
-                },
-                {
-                  id: 3,
-                  name: '累计',
-                  width: 78
                 }
               ]}
             />
@@ -315,11 +310,15 @@ const Home: { (props: Props): JSX.Element } = (props) => {
           * 机械分布情况
         */}
         <SituationBox
-          title="人员情况"
+          title="机械分布情况"
           imgName="logo"
         >
           <>
             <PieChart
+              nameListClass="pie-list-wrap-flex"
+              styles={{
+                paddingTop: 12
+              }}
               itemData={
                 [
                   { value: 548 },
@@ -333,6 +332,103 @@ const Home: { (props: Props): JSX.Element } = (props) => {
               }
               pieWidth={clientWidth / 2.7}
               longitudinal
+            />
+            <div className="machine-wrap">
+              <div className="machine-wrap-content">
+                <img className="machine-icon" src={`${resourceBase}/images/logo.png`} />
+                <div className="machine-right-data">
+                  <div className="machine-title">联机数<span>56</span></div>
+                  <div className="machine-data-bar">
+                    <div>
+                      <p>23</p>
+                      <p>掘进中</p>
+                    </div>
+                    <div>
+                      <p>23</p>
+                      <p>掘进中</p>
+                    </div>
+                    <div>
+                      <p>23</p>
+                      <p>掘进中</p>
+                    </div>
+                    <div>
+                      <p>23</p>
+                      <p>掘进中</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        </SituationBox>
+
+        {/*
+          * 报警情况
+        */}
+        <SituationBox
+          title="报警情况"
+          imgName="logo"
+          styles={{
+            paddingBottom: 24
+          }}
+        >
+          <>
+            <div
+              style={{
+                position: 'relative'
+              }}
+            >
+              <PieChart
+                styles={{
+                  padding: '33px 17px 25px'
+                }}
+                pieWidth={clientWidth / 2.7}
+                itemData={
+                  [
+                    { value: 548 },
+                    { value: 535 },
+                    { value: 510 },
+                    { value: 634 },
+                  ]
+                }
+                radius={['70%', '100%']}
+                colorList={
+                  ['#D0021B', '#F9A825', '#F8E71C', '#1777FD']
+                }
+                nameListClass="pie-list-wrap-police"
+              />
+              <div
+                className="center-data"
+                style={{
+                  width: clientWidth / 2.7,
+                  height: clientWidth / 2.7
+                }}
+              >
+                <p>234</p>
+                <p>报警总数</p>
+              </div>
+            </div>
+            <SwitchBtn
+              onClick={(id) => {
+                console.log(id);
+              }}
+              btnData={[
+                {
+                  id: 1,
+                  name: '今天',
+                  width: 78
+                },
+                {
+                  id: 2,
+                  name: '最近7天',
+                  width: 78
+                },
+                {
+                  id: 3,
+                  name: '累计',
+                  width: 78
+                }
+              ]}
             />
           </>
         </SituationBox>
