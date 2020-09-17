@@ -10,6 +10,7 @@ import MainTab from '../../components/MainTab/MainTab';
 import SituationBox from '../../components/SituationBox/SituationBox';
 import SwitchBtn from '../../components/SwitchBtn/SwitchBtn';
 import PieChart from '../../components/PieChart/PieChart';
+import LineChart from '../../components/LineChart/LineChart';
 import echarts from 'echarts/lib/echarts';
 //导入折线图
 import 'echarts/lib/chart/line';
@@ -149,7 +150,7 @@ const Home: { (props: Props): JSX.Element } = (props) => {
           * 进度情况
         */}
         <SituationBox
-          title="人员情况"
+          title="工点统计情况"
           imgName="logo"
         >
           <>
@@ -301,6 +302,107 @@ const Home: { (props: Props): JSX.Element } = (props) => {
                   id: 2,
                   name: '累计',
                   width: 78
+                }
+              ]}
+            />
+          </>
+        </SituationBox>
+
+        {/*
+          * 人员情况
+        */}
+        <SituationBox
+          title="人员情况"
+          imgName="logo"
+          styles={{
+            paddingBottom: 24
+          }}
+        >
+          <>
+            <div className="personnel-line-box">
+              <div className="line-box-wrap">
+                <div className="line-title">
+                  <p className="blue">201</p>
+                  <p>现场管理人员</p>
+                </div>
+                <LineChart
+                  areaStyle
+                  xAxisData={[]}
+                  seriesData={[820, 932, 901, 934, 1290, 1330, 1320]}
+                />
+              </div>
+              <div className="line-box-wrap">
+                <div className="line-title">
+                  <p className="yellow">201</p>
+                  <p>现场管理人员</p>
+                </div>
+                <LineChart
+                  areaStyle
+                  lineColor="#F5B140"
+                  startColor="#F6B345"
+                  stopColor="#FDECD1"
+                  xAxisData={['周一', '周二', '周三', '周四', '周五', '周六', '周日']}
+                  seriesData={[820, 932, 901, 934, 1290, 1330, 320]}
+                />
+              </div>
+            </div>
+            <div>
+              <LineChart
+                lineHeight={180}
+                lineWidth={clientWidth - 20}
+                rotate={-55}
+                areaStyle
+                grid={
+                  {
+                    left: '10%',
+                    bottom: '50%',
+                    top: '0%',
+                    right: '10%',
+                    containLabel: false
+                  }
+                }
+                xAxisData={['2020-09', '2020-09', '2020-09', '2020-09', '2020-09', '2020-09', '2020-09', '2020-09', '2020-09', '2020-09', '2020-09', '2020-09']}
+                seriesData={[820, 932, 901, 934, 1290, 1330, 1320, 901, 934, 1290, 1330, 1320]}
+              />
+            </div>
+            <div>
+              <LineChart
+                lineHeight={180}
+                lineWidth={clientWidth - 20}
+                rotate={-55}
+                symbol
+                grid={
+                  {
+                    left: '10%',
+                    bottom: '50%',
+                    top: '0%',
+                    right: '10%',
+                    containLabel: false
+                  }
+                }
+                xAxisData={['09-23', '09-23', '09-23', '09-23', '09-23', '09-23', '09-23']}
+                seriesData={[820, 932, 901, 934, 1290, 1330, 1320]}
+              />
+            </div>
+            <SwitchBtn
+              onClick={(id) => {
+                console.log(id);
+              }}
+              btnData={[
+                {
+                  id: 1,
+                  name: '实时',
+                  width: 70
+                },
+                {
+                  id: 2,
+                  name: '出勤',
+                  width: 70
+                },
+                {
+                  id: 3,
+                  name: '在岗',
+                  width: 70
                 }
               ]}
             />
