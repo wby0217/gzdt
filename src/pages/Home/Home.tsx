@@ -19,6 +19,7 @@ import 'echarts/lib/component/legend';
 import 'echarts/lib/component/markPoint';
 import ReactEcharts from 'echarts-for-react';
 import TitleBar from "../../components/TitleBar/TitleBar";
+import RiskList from "../../components/RiskList/RiskList";
 
 interface Props {}
 
@@ -359,6 +360,43 @@ const Home: { (props: Props): JSX.Element } = (props) => {
                 </div>
               </div>
             </div>
+          </>
+        </SituationBox>
+
+        {/*
+          * 风险管控情况
+        */}
+        <SituationBox
+          title="风险管控情况"
+          imgName="logo"
+          styles={{
+            paddingBottom: 24
+          }}
+        >
+          <>
+            <RiskList />
+            <SwitchBtn
+              onClick={(id) => {
+                console.log(id);
+              }}
+              btnData={[
+                {
+                  id: 1,
+                  name: '当期',
+                  width: 78
+                },
+                {
+                  id: 2,
+                  name: '本年合计',
+                  width: 78
+                },
+                {
+                  id: 3,
+                  name: '累计',
+                  width: 78
+                }
+              ]}
+            />
           </>
         </SituationBox>
 

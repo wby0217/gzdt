@@ -1,0 +1,85 @@
+.RiskList {
+    display: flex;
+    padding: 0 10px;
+    margin-bottom: 28px;
+    margin-top: 23px;
+    .risk-text {
+        width: 32px;
+        padding-top: 33px;
+        p {
+            height: 33px;
+            line-height: 33px;
+            margin-bottom: 5px;
+            text-align: right;
+            padding-right: 5px;
+        }
+        .red-text {
+            color: #D0021B;
+        }
+        .org-text {
+            color: #FFAD00;
+        }
+        .yel-text {
+            color: #F8E71C;
+        }
+        .blu-text {
+            color: #1890FF;
+        }
+    }
+    .color-box {
+        flex: 1;
+        display: flex;
+        .line-box {
+            width: calc((100% - 7px) / 3);
+            padding-left: 5px;
+            div {
+                height: 33px;
+                line-height: 33px;
+                text-align: center;
+                border-radius: 4px;
+                margin-bottom: 5px;
+                color: #fff;
+                font-size: 18px;
+            }
+            .jt-title {
+                color: #D0021B;
+                font-size: 14px;
+                height: 28px;
+            }
+            .zb-title {
+                color: #FFAD00;
+                font-size: 14px;
+                height: 28px;
+            }
+            .jg-title {
+                color: #1890FF;
+                font-size: 14px;
+                height: 28px;
+            }
+            .red-box {
+                background-color: #D0021B;
+            }
+            .red-box-no-data {
+                background-color: rgba(208, 2, 27, 0.5);
+            }
+            .org-box {
+                background-color: #FFAD00;
+            }
+            .org-box-no-data {
+                background-color: rgba(245, 166, 35, 0.5);
+            }
+            .yel-box {
+                background-color: #F8E71C;
+            }
+            .yel-box-no-data {
+                background-color: rgba(248, 231, 28, 0.5);
+            }
+            .blu-box {
+                background-color: #1890FF;
+            }
+            .blu-box-no-data {
+                background-color: rgba(24, 144, 255, 0.5);
+            }
+        }
+    }
+}
