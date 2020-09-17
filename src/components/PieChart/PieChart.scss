@@ -19,7 +19,24 @@
                 min-width: 54px;
                 font-size: 12px;
                 margin-left: 8px;
-                // margin-right: 12px;
+            }
+            .list-item-num {
+                color: #0068F9;
+            }
+        }
+    }
+    .pie-list-wrap-flex{
+        width: calc(100% - 20px);
+        display: flex;
+        flex-wrap: wrap; 
+        .list-item {
+            width: (100% / 2);
+            box-sizing: border-box;
+            padding-left: 40px;
+            .list-item-name {
+                font-size: 14px;
+                margin-right: 12px;
+                
             }
             .list-item-num {
                 color: #0068F9;

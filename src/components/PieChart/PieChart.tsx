@@ -8,6 +8,7 @@ interface Props {
     radius?: any;
     showNameList?: boolean;
     pieWidth?: number;
+    longitudinal?: boolean;
 }
 
 const PieChart: { (props: Props): JSX.Element } = (props) => {
@@ -16,7 +17,8 @@ const PieChart: { (props: Props): JSX.Element } = (props) => {
         colorList,
         showNameList = true,
         radius,
-        pieWidth
+        pieWidth,
+        longitudinal
     } = props;
     const clientWidth = document.documentElement.clientWidth;
     const option = {
@@ -42,11 +44,16 @@ const PieChart: { (props: Props): JSX.Element } = (props) => {
     };
 
     return (
-        <div className="PieChart">
+        <div
+            className="PieChart"
+            style={{
+                flexDirection: longitudinal ? 'column' : 'inherit'
+            }}
+        >
             <ReactEcharts option={option} style={{ width: pieWidth || (clientWidth / 5.9), height: pieWidth || (clientWidth / 5.9) }} />
             {
                 showNameList &&
-                <div className="pie-list-wrap">
+                <div className={`pie-list-wrap ${longitudinal ? 'pie-list-wrap-flex' : ''}`}>
                     <div className="list-item">
                         <i></i>
                         <p className="list-item-name">未贯通</p>

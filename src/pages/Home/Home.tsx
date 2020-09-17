@@ -145,7 +145,7 @@ const Home: { (props: Props): JSX.Element } = (props) => {
         </div>
 
         {/*
-          * 人员人员情况
+          * 进度情况
         */}
         <SituationBox
           title="人员情况"
@@ -211,9 +211,15 @@ const Home: { (props: Props): JSX.Element } = (props) => {
           </>
         </SituationBox>
 
+        {/*
+          * 进度情况
+        */}
         <SituationBox
           title="进度情况"
           imgName="logo"
+          style={{
+            paddingBottom: 16
+          }}
         >
           <>
             <div
@@ -240,6 +246,16 @@ const Home: { (props: Props): JSX.Element } = (props) => {
                   radius={['80%', '100%']}
                   showNameList={false}
                 />
+                <div className="pie-center-num">
+                  <div className="pie-center-num-top">
+                    <span
+                      className="num"
+                      style={{ color: '#0068F9' }}
+                    >100</span>
+                    <span className="proportion">%</span>
+                  </div>
+                  <p className="pie-center-text">投资完成率</p>
+                </div>
               </div>
               <div
                 className="personnel-pie"
@@ -258,6 +274,16 @@ const Home: { (props: Props): JSX.Element } = (props) => {
                   pieWidth={clientWidth / 3.2}
                   showNameList={false}
                 />
+                <div className="pie-center-num">
+                  <div className="pie-center-num-top">
+                    <span
+                      className="num"
+                      style={{ color: '#F9A825' }}
+                    >100</span>
+                    <span className="proportion">%</span>
+                  </div>
+                  <p className="pie-center-text">投资完成率</p>
+                </div>
               </div>
             </div>
             <SwitchBtn
@@ -267,17 +293,46 @@ const Home: { (props: Props): JSX.Element } = (props) => {
               btnData={[
                 {
                   id: 1,
-                  name: '实施'
+                  name: '本年',
+                  width: 78
                 },
                 {
                   id: 2,
-                  name: '出勤'
+                  name: '累计',
+                  width: 78
                 },
                 {
                   id: 3,
-                  name: '在岗'
-                },
+                  name: '累计',
+                  width: 78
+                }
               ]}
+            />
+          </>
+        </SituationBox>
+
+        {/*
+          * 机械分布情况
+        */}
+        <SituationBox
+          title="人员情况"
+          imgName="logo"
+        >
+          <>
+            <PieChart
+              itemData={
+                [
+                  { value: 548 },
+                  { value: 535 },
+                  { value: 510 },
+                  { value: 634 },
+                ]
+              }
+              colorList={
+                ['#1777FD', '#F9A825', '#E91E63', '#00BCD4']
+              }
+              pieWidth={clientWidth / 2.7}
+              longitudinal
             />
           </>
         </SituationBox>

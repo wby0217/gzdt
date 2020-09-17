@@ -6,21 +6,23 @@
         display: flex;
         background-color: #F5F5F5;
         border-radius: 4px;
-        border: 1px solid #ECECEC;
+        // border: 1px solid #ECECEC;
         overflow: hidden;
         .btn {
             width: 50px;
             height: 20px;
             line-height: 20px;
             text-align: center;
-            border-left: 1px solid #ECECEC;
             color: #333;
             font-size: 13px;
+            border: 1px solid #ECECEC;
+            border-left: none;
         }
         .btn:first-child {
-            border: none;
+            border-left: 1px solid #ECECEC;
         }
         .changeBtn {
+            border: 1px solid #0068F9;
             background-color: #0068F9;
             color: #fff;
         }

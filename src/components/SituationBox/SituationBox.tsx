@@ -8,16 +8,20 @@ interface Props {
     children?: JSX.Element;
     title: string;
     imgName: string;
+    style?: any;
 }
 
 const SituationBox: { (props: Props): JSX.Element } = (props) => {
-    console.log('props', props);
+    const { children, imgName, title, style } = props;
     return (
-        <div className="SituationBox">
+        <div
+            className="SituationBox"
+            style={{ ...style }}
+        >
             <div className="TitleBar-wrap">
                 <TitleBar
-                    title={props.title}
-                    imgName={props.imgName}
+                    title={title}
+                    imgName={imgName}
                 />
             </div>
             {/* <div className="title-box">
@@ -28,7 +32,7 @@ const SituationBox: { (props: Props): JSX.Element } = (props) => {
                 <Icon type="right" />
             </div> */}
             {
-                props.children
+                children
             }
         </div>
     );

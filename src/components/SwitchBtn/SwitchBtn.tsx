@@ -19,6 +19,9 @@ const SwitchBtn: { (props: Props): JSX.Element } = (props) => {
                 {
                     btnData.map((item) => (
                         <div
+                            style={{
+                                width: item.width || 50
+                            }}
                             key={item.id}
                             className={`btn ${id === item.id ? 'changeBtn' : ''}`}
                             onClick={() => {
